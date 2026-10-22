@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GRUPO LABMEDIC — Checklist de Cessão de Veículo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6f8;--fg:#14202b;--card:#fff;--muted:#5c6b78;--line:#d6dde3;--pri:#0b6e6e;--pri2:#13a3a3;--acc:#e8a33d;--shadow:0 12px 40px -14px rgba(10,40,60,.25)}
+[data-theme=dark]{--bg:#0d151c;--fg:#e6eef3;--card:#16222c;--muted:#94a6b4;--line:#2a3a47;--pri:#2fc4c4;--pri2:#7fe0d8;--acc:#f2b65a;--shadow:0 12px 40px -14px rgba(0,0,0,.7)}
+*{box-sizing:border-box}body{margin:0;font-family:Sora,system-ui,sans-serif;background:var(--bg);color:var(--fg);transition:background .3s,color .3s}
+header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font-weight:800;letter-spacing:.12em}.logo span{color:var(--pri)}
+nav button,.btn{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--fg);padding:9px 16px;border-radius:999px;margin-left:6px}
+.btn.pri{background:var(--pri);color:var(--bg);border-color:var(--pri);font-weight:600}
+.hero{position:relative;height:78vh;min-height:480px;overflow:hidden}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);transition:opacity 1.2s,transform 6s}
+.slide.on{opacity:1;transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,20,28,.88) 30%,rgba(5,20,28,.2))}
+.hero-txt{position:absolute;z-index:2;left:5vw;top:50%;transform:translateY(-50%);max-width:640px;color:#f3f8fa}
+.hero-txt small{letter-spacing:.3em;color:var(--acc);font-weight:600}
+.hero-txt h1{font-size:clamp(2.6rem,7vw,5.5rem);line-height:.95;margin:.3em 0;font-weight:800}
+.hero-txt h1 span{color:#3fd0c9}.hero-txt p{opacity:.85;line-height:1.6}
+.dots{position:absolute;z-index:2;bottom:24px;left:5vw;display:flex;gap:8px}
+.dots i{width:28px;height:4px;background:rgba(255,255,255,.35);cursor:pointer;border-radius:2px}.dots i.on{background:var(--acc)}
+.arrows{position:absolute;z-index:2;right:5vw;bottom:18px;display:flex;gap:8px}
+.arrows button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;font-size:1.2rem;cursor:pointer}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding:50px 5vw}
+.feat div{background:var(--card);padding:24px;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.feat b{display:block;color:var(--pri);font-size:1.6rem;margin-bottom:6px}
+.wrap{display:none;grid-template-columns:380px 1fr;gap:24px;padding:24px 3vw}
+.wrap.on{display:grid}
+.form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;position:sticky;top:80px;max-height:calc(100vh - 100px);overflow:auto;box-shadow:var(--shadow)}
+.form h3{font-size:.8rem;letter-spacing:.15em;color:var(--pri);margin:18px 0 8px;text-transform:uppercase}
+.form label{display:block;font-size:.75rem;color:var(--muted);margin-top:8px}
+.form input{width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);font:inherit;font-size:.85rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.preview{display:flex;flex-direction:column;align-items:center;gap:24px}
+/* Document */
+.page{width:210mm;min-height:297mm;background:#fff;color:#1a1a1a;padding:16mm 15mm;box-shadow:var(--shadow);font-family:"Source Serif 4",Georgia,serif;font-size:10pt;line-height:1.45}
+.dh{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid #0b6e6e;padding-bottom:8px;margin-bottom:10px;font-family:Sora,sans-serif}
+.dh .k{font-size:8pt;letter-spacing:.2em;color:#0b6e6e;font-weight:600}.dh h2{margin:2px 0 0;font-size:15pt}
+.dh .b{text-align:right;font-size:8pt;color:#555}.dh .b strong{display:block;font-size:10pt;color:#0b6e6e;letter-spacing:.1em}
+.page h4{font-family:Sora,sans-serif;font-size:9.5pt;background:#e9f3f3;color:#0b5555;padding:4px 8px;margin:12px 0 6px;border-left:4px solid #0b6e6e}
+.page p{margin:4px 0;text-align:justify}
+.f{display:inline-block;min-width:120px;border-bottom:1px solid #444;padding:0 4px;font-weight:600;font-family:Sora,sans-serif;font-size:9pt}
+.f:empty::after{content:"\00a0"}
+table{width:100%;border-collapse:collapse;font-size:8.8pt;margin:4px 0}
+th,td{border:1px solid #9aa;padding:4px 6px;text-align:left}th{background:#0b6e6e;color:#fff;font-family:Sora,sans-serif;font-weight:600}
+td.c{width:70px}.tall td{height:24px}
+.note{font-size:8pt;color:#555;font-style:italic}
+.sig{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:26px}.sig div{border-top:1px solid #333;text-align:center;padding-top:4px;font-size:8.5pt}
+.pf{font-size:7.5pt;color:#777;text-align:center;margin-top:12px;border-top:1px solid #ddd;padding-top:6px}
+@media(max-width:1100px){.wrap{grid-template-columns:1fr}.form{position:static;max-height:none}.page{width:100%;min-height:auto}}
+@media print{@page{size:A4;margin:0}body{background:#fff}header,.hero,.feat,.form,#home{display:none!important}.wrap{display:block!important;padding:0}.preview{gap:0}.page{box-shadow:none;width:210mm;height:297mm;page-break-after:always;overflow:hidden}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">GRUPO <span>LABMEDIC</span></div>
+  <nav>
+    <button onclick="show('home')">Início</button>
+    <button onclick="show('doc')">Editar checklist</button>
+    <button id="tg" onclick="toggleTheme()">🌙</button>
+  </nav>
+</header>
+
+<section id="home">
+  <div class="hero">
+    <div class="slide on" style="background-image:url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1800&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1800&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1800&q=80')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1800&q=80')"></div>
+    <div class="hero-txt">
+      <small>CONTROLE DE FROTA</small>
+      <h1>GRUPO<br><span>LABMEDIC</span></h1>
+      <p>Checklist digital de cessão, vistoria e devolução de veículos para assistência técnica. Preencha, visualize e imprima em segundos.</p>
+      <button class="btn pri" onclick="show('doc')">Preencher checklist →</button>
+    </div>
+    <div class="dots"></div>
+    <div class="arrows"><button onclick="go(-1)">‹</button><button onclick="go(1)">›</button></div>
+  </div>
+  <div class="feat">
+    <div><b>01</b>Termos de uso adequado do veículo cedido.</div>
+    <div><b>02</b>Vistoria completa na entrega e na devolução.</div>
+    <div><b>03</b>Ocorrências, responsabilidades e assinaturas.</div>
+    <div><b>A4</b>Documento pronto para impressão ou PDF.</div>
+  </div>
+</section>
+
+<section class="wrap" id="doc">
+  <aside class="form" id="form">
+    <button class="btn pri" style="width:100%;margin:0" onclick="window.print()">🖨 Imprimir / Salvar PDF</button>
+    <h3>Empresa cedente</h3>
+    <label>Razão social<input data-k="empresa" value="LABMEDIC COMÉRCIO E MANUTENÇÃO DE EQUIPAMENTOS LTDA."></label>
+    <label>CNPJ<input data-k="cnpjEmp" value="21.937.632/0001-37"></label>
+    <label>Responsável (nome completo)<input data-k="resp"></label>
+    <label>Cidade / UF (assinatura)<input data-k="cidade" value="Rio de Janeiro-RJ"></label>
+    <h3>Usuário do veículo (técnico)</h3>
+    <label>Nome completo<input data-k="tec"></label>
+    <div class="row"><label>CPF<input data-k="cpf"></label><label>CNPJ (se aplicável)<input data-k="cnpjTec"></label></div>
+    <div class="row"><label>CNH nº<input data-k="cnh"></label><label>Categoria<input data-k="cat"></label></div>
+    <label>Validade CNH<input type="date" data-k="val"></label>
+    <h3>Veículo e período</h3>
+    <div class="row"><label>Marca / modelo<input data-k="modelo"></label><label>Placa<input data-k="placa"></label></div>
+    <div class="row"><label>Ano / modelo<input data-k="ano"></label><label>Cor<input data-k="cor"></label></div>
+    <label>Renavam<input data-k="renavam"></label>
+    <label>Uso autorizado a partir de<input type="date" data-k="inicio"></label>
+    <label>Período de uso<input data-k="periodo"></label>
+    <label>Local de entrega / devolução<input data-k="local"></label>
+    <button class="btn" style="width:100%;margin:16px 0 0" onclick="clearAll()">Limpar campos</button>
+  </aside>
+
+  <div class="preview">
+    <!-- PAGE 1 -->
+    <div class="page">
+      <div class="dh"><div><div class="k">CONTROLE DE FROTA / 01</div><h2>CHECKLIST DE CESSÃO DE VEÍCULO</h2><div style="font-size:8pt;color:#555">Uso em assistência técnica a clientes • Termos de uso e identificação</div></div><div class="b"><strong>GRUPO LABMEDIC</strong>Placa: <span data-v="placa"></span></div></div>
+      <h4>1. Termos de uso adequado</h4>
+      <p><b>1. Finalidade e autorização.</b> O veículo é cedido exclusivamente para deslocamentos relacionados à assistência técnica a clientes e a atividades autorizadas pela cessionária. O uso particular, o empréstimo a terceiros e a condução por pessoa não autorizada dependem de autorização expressa da cessionária.</p>
+      <p><b>2. Habilitação e condução.</b> O técnico deverá manter CNH válida e compatível, cumprir a legislação de trânsito, utilizar o cinto de segurança e observar a lotação e os limites de carga. É vedado conduzir sob efeito de álcool, drogas ou medicamentos que comprometam a direção, bem como manusear o celular ao volante.</p>
+      <p><b>3. Conservação e conferência.</b> Antes do uso, o técnico deverá conferir as condições básicas de segurança, preservar a limpeza e acondicionar ferramentas e materiais de forma segura. Não deverá prosseguir se houver indícios de falha que comprometam a segurança.</p>
+      <p><b>4. Abastecimento e manutenção.</b> Utilizar o combustível especificado e seguir as orientações de abastecimento, revisões e manutenção da cessionária. Reparos, alterações e instalação de acessórios exigem autorização, ressalvadas medidas urgentes para proteger pessoas e o veículo, com comunicação imediata.</p>
+      <p><b>5. Guarda e comunicação.</b> Guardar o veículo, as chaves e os documentos em local seguro; não deixar materiais expostos. Comunicar imediatamente acidentes, panes, furtos, danos, autuações e irregularidades, preservando registros e acionando as autoridades quando necessário.</p>
+      <p><b>6. Despesas e responsabilidades.</b> Combustível, pedágios, estacionamento, infrações (multas) e eventuais danos serão tratados conforme o contrato e as regras comunicadas às partes, respeitada a legislação aplicável e a apuração das circunstâncias; este checklist autoriza os descontos cabíveis dos valores orçados diretamente da compensação financeira pelos serviços prestados pelo técnico à cessionária, inclusive as multas pelas infrações de trânsito.</p>
+      <p><b>7. Devolução.</b> Devolver o veículo no prazo e local acordados, com documentos, chaves e itens recebidos. Registrar quilometragem, combustível, condições e ocorrências na devolução, mediante conferência das partes.</p>
+      <p><b>8. Revisões periódicas.</b> As revisões periódicas do veículo, estabelecidas pela cessionária e programadas para ocorrer a cada 10.000 km, devem ser observadas à risca e realizadas no prazo, com agendamento prévio e comunicação à cessionária com antecedência mínima de 1.000 km para atingimento do teto, sob pena de implicar no desconto total dos valores cobrados pela empresa contratada à cessionária, os quais serão repassados ao condutor do veículo.</p>
+      <h4>2. Identificação das partes</h4>
+      <p>Cessionária (proprietária / responsável): <span class="f" data-v="empresa"></span> CNPJ: <span class="f" data-v="cnpjEmp"></span></p>
+      <p>Responsável (nome completo): <span class="f" style="min-width:380px" data-v="resp"></span></p>
+      <p>Técnico — nome completo: <span class="f" style="min-width:400px" data-v="tec"></span></p>
+      <p>CPF: <span class="f" data-v="cpf"></span> &nbsp; CNPJ (se aplicável): <span class="f" data-v="cnpjTec"></span></p>
+      <p>CNH nº: <span class="f" data-v="cnh"></span> &nbsp; Categoria: <span class="f" style="min-width:50px" data-v="cat"></span> &nbsp; Validade: <span class="f" style="min-width:90px" data-v="val"></span></p>
+      <h4>3. Identificação do veículo e período de uso</h4>
+      <p>Marca / modelo: <span class="f" style="min-width:250px" data-v="modelo"></span> &nbsp; Placa: <span class="f" data-v="placa"></span></p>
+      <p>Ano / modelo: <span class="f" style="min-width:90px" data-v="ano"></span> &nbsp; Cor: <span class="f" style="min-width:90px" data-v="cor"></span> &nbsp; Renavam: <span class="f" data-v="renavam"></span></p>
+      <p>Uso autorizado a partir de: <span class="f" style="min-width:90px" data-v="inicio"></span></p>
+      <p>Local de entrega / devolução: <span class="f" style="min-width:380px" data-v="local"></span></p>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page">
+      <div class="dh"><div><div class="k">CONTROLE DE FROTA / 02</div><h2>VISTORIA DO VEÍCULO</h2></div><div class="b"><strong>GRUPO LABMEDIC</strong>Placa: <span data-v="placa"></span> • Técnico: <span data-v="tec"></span></div></div>
+      <h4>4. Registros de entrega e devolução</h4>
+      <table><tr><th>Registro</th><th>Entrega</th><th>Devolução</th></tr>
+        <tr><td>Data e horário</td><td>____/____/______ &nbsp;____:____</td><td>____/____/______ &nbsp;____:____</td></tr>
+        <tr><td>Quilometragem</td><td>____________________ km</td><td>____________________ km</td></tr>
+        <tr><td>Combustível (marcar)</td><td>☐ Reserva ☐ ¼ ☐ ½ ☐ ¾ ☐ Cheio</td><td>☐ Reserva ☐ ¼ ☐ ½ ☐ ¾ ☐ Cheio</td></tr>
+        <tr><td>Responsável pela vistoria</td><td></td><td></td></tr></table>
+      <h4>5. Checklist de itens e estado geral</h4>
+      <p class="note">Preencher as colunas: C = conforme; A = avaria / irregularidade; NA = não aplicável. Detalhar todo "A" na seção 6.</p>
+      <table id="items"><tr><th>Item a conferir</th><th>Entrega</th><th>Devolução</th><th>Observação / ref.</th></tr></table>
+      <p class="note">A vistoria é visual e funcional básica; não substitui avaliação mecânica. Conferir o arrefecimento somente com o motor frio.</p>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="page">
+      <div class="dh"><div><div class="k">CONTROLE DE FROTA / 03</div><h2>OCORRÊNCIAS E RESPONSABILIDADE</h2></div><div class="b"><strong>GRUPO LABMEDIC</strong>Placa: <span data-v="placa"></span> • Período: <span data-v="periodo"></span></div></div>
+      <h4>6. Avarias, irregularidades e providências</h4>
+      <p class="note">Indicar item, local do dano, condição observada, momento (entrega / devolução) e providência adotada.</p>
+      <table class="tall"><tr><th>Item / local</th><th>Descrição e momento</th><th>Providência / responsável</th></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></table>
+      <p>Referência das fotos / anexos: <span class="f" style="min-width:400px"></span></p>
+      <h4>7. Ferramentas, materiais, chaves e acessórios cedidos</h4>
+      <table class="tall"><tr><th>Descrição / identificação</th><th>Qtde. entregue</th><th>Qtde. devolvida</th><th>Condição / observações</th></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></table>
+      <h4>8. Resultado da conferência</h4>
+      <p>Na entrega: ☐ Liberado para uso &nbsp; ☐ Liberado com ressalvas &nbsp; ☐ Não liberado</p>
+      <p>Na devolução: ☐ Sem pendências &nbsp; ☐ Com pendências registradas abaixo</p>
+      <p>Ressalvas / pendências: <span class="f" style="min-width:420px"></span></p>
+      <p>Prazo e responsável pela regularização: <span class="f" style="min-width:320px"></span></p>
+      <h4>9. Ciência e assinaturas — entrega</h4>
+      <p>A cessionária e o técnico declaram ter ciência dos termos de uso e das condições registradas na entrega, inclusive das ressalvas e dos itens recebidos. As assinaturas confirmam a conferência e o recebimento, sem afastar a apuração de fatos ou direitos previstos na legislação.</p>
+      <p>Local e data: <b data-v="cidade"></b>, ______ / ______ / ______</p>
+      <div class="sig"><div>Cessionária / representante<br><b data-v="resp"></b></div><div>Técnico<br><b data-v="tec"></b></div></div>
+      <h4>10. Confirmação da devolução</h4>
+      <p>Local e data: <span class="f" style="min-width:200px"></span> ______ / ______ / ______</p>
+      <div class="sig"><div>Recebido por (nome e assinatura)</div><div>Técnico (assinatura)<br><b data-v="tec"></b></div></div>
+      <div class="pf"><span data-v="empresa"></span> • CNPJ <span data-v="cnpjEmp"></span></div>
+    </div>
+  </div>
+</section>
+
+<script>
+const items=["Carroceria, pintura, amassados e riscos","Para-choques, portas, capô e porta-malas","Vidros, para-brisa e retrovisores","Pneus (desgaste, danos e calibragem)","Rodas, estepe e chave de roda","Faróis, lanternas e luzes de freio","Setas, pisca-alerta e luz de ré","Limpadores do para-brisa","Buzina","Painel, indicadores e alertas de falha","Freios e freio de estacionamento","Direção, suspensão e ruídos anormais","Partida, motor e funcionamento geral","Vazamentos aparentes sob o veículo","Bancos, forrações, tapetes e limpeza","Cintos de segurança e travas","Ar-condicionado e ventilação","Fechaduras, alarme e vidros elétricos","CRLV-e disponível e regular","Chaves, controle e chave reserva (se cedida)","Triângulo de sinalização","Macaco e chave de roda","Extintor, quando exigido / disponibilizado"];
+const t=document.getElementById('items');items.forEach(i=>t.insertAdjacentHTML('beforeend',`<tr><td>${i}</td><td class="c"></td><td class="c"></td><td></td></tr>`));
+const fmt=v=>/^\d{4}-\d{2}-\d{2}$/.test(v)?v.split('-').reverse().join('/'):v;
+const inputs=[...document.querySelectorAll('[data-k]')];
+const saved=JSON.parse(localStorage.getItem('lm-checklist')||'{}');
+function render(){const d={};inputs.forEach(i=>{d[i.dataset.k]=i.value;document.querySelectorAll(`[data-v="${i.dataset.k}"]`).forEach(e=>e.textContent=fmt(i.value))});localStorage.setItem('lm-checklist',JSON.stringify(d))}
+inputs.forEach(i=>{if(saved[i.dataset.k]!==undefined)i.value=saved[i.dataset.k];i.addEventListener('input',render)});render();
+function clearAll(){inputs.forEach(i=>i.value='');render()}
+function show(id){document.getElementById('home').style.display=id==='home'?'block':'none';document.getElementById('doc').classList.toggle('on',id==='doc');scrollTo(0,0)}
+function toggleTheme(){const r=document.documentElement,d=r.dataset.theme==='dark'?'light':'dark';r.dataset.theme=d;localStorage.setItem('lm-theme',d);document.getElementById('tg').textContent=d==='dark'?'☀️':'🌙'}
+const th=localStorage.getItem('lm-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(th==='dark')toggleTheme();
+const slides=[...document.querySelectorAll('.slide')],dots=document.querySelector('.dots');let cur=0;
+slides.forEach((_,i)=>{const e=document.createElement('i');e.onclick=()=>set(i);dots.appendChild(e)});
+function set(n){cur=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('on',i===cur));[...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur))}
+function go(d){set(cur+d);clearInterval(tm);tm=setInterval(()=>set(cur+1),5000)}
+set(0);let tm=setInterval(()=>set(cur+1),5000);
+</script>
+</body>
+</html>
