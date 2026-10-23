@@ -8,7 +8,7 @@
 //   ALLOWED_ORIGIN     (opcional)    origem extra liberada por CORS (ex.: http://localhost:5500)
 
 const GET_ACTIONS = new Set(['health', 'bootstrap', 'diagnostico']);
-const POST_ACTIONS = new Set(['create', 'update', 'delete']);
+const POST_ACTIONS = new Set(['create', 'update', 'inactivate', 'reactivate']); // sem exclusão física
 
 function setCors(req, res) {
   const origin = req.headers.origin;
